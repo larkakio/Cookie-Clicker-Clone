@@ -19,13 +19,16 @@ const ui = DM_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
+const APP_DESCRIPTION =
+  "Neon cyberpunk idle baker on Base. Swipe to bake cookies, buy upgrades, and level up. Optional daily check-in on-chain—pay L2 gas only. English UI.";
+
 export const metadata: Metadata = {
   title: "Neon Cookie Core",
-  description: "Cyberpunk idle baker — swipe the core on Base.",
+  description: APP_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "Neon Cookie Core",
-    description: "Cyberpunk idle baker — swipe the core on Base.",
+    description: APP_DESCRIPTION,
     images: ["/app-thumbnail.jpg"],
   },
 };
