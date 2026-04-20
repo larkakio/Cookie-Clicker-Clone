@@ -4,6 +4,9 @@ const DEFAULT_SITE_URL = "https://cookie-clicker-clone-ebon.vercel.app";
 /** From Base dashboard → Add Domain → verification meta tag `base:app_id`. */
 const DEFAULT_BASE_APP_ID = "69e5dba287970a2e83bef468";
 
+/** Base dashboard → Settings → Builder Codes (ERC-8021 attribution suffix). */
+const DEFAULT_BUILDER_CODE = "bc_y1znz5in";
+
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL;
 
@@ -23,8 +26,11 @@ export function getCheckInContractAddress(): `0x${string}` | null {
 }
 
 export function getBuilderCode(): string | null {
-  const c = process.env.NEXT_PUBLIC_BUILDER_CODE;
-  return c && c.length > 0 ? c : null;
+  const c =
+    process.env.NEXT_PUBLIC_BUILDER_CODE !== undefined
+      ? process.env.NEXT_PUBLIC_BUILDER_CODE
+      : DEFAULT_BUILDER_CODE;
+  return c.length > 0 ? c : null;
 }
 
 /** Optional raw hex suffix override (rare); takes precedence over ox generation */
