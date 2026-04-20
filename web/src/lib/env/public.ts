@@ -1,12 +1,18 @@
+/** Production app URL (Vercel). Override with NEXT_PUBLIC_SITE_URL (e.g. http://localhost:3000 for local OG/debug). */
+const DEFAULT_SITE_URL = "https://cookie-clicker-clone-ebon.vercel.app";
+
+/** From Base dashboard → Add Domain → verification meta tag `base:app_id`. */
+const DEFAULT_BASE_APP_ID = "69e5dba287970a2e83bef468";
+
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL;
 
 export const CHAIN_ID = Number(
   process.env.NEXT_PUBLIC_CHAIN_ID ?? 8453,
 ) as 8453;
 
 export const BASE_APP_ID =
-  process.env.NEXT_PUBLIC_BASE_APP_ID ?? "neon-cookie-core-local";
+  process.env.NEXT_PUBLIC_BASE_APP_ID ?? DEFAULT_BASE_APP_ID;
 
 const ZERO = "0x0000000000000000000000000000000000000000";
 

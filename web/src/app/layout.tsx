@@ -3,7 +3,7 @@ import { DM_Sans, Orbitron } from "next/font/google";
 import { headers } from "next/headers";
 import { cookieToInitialState } from "wagmi";
 import { Providers } from "@/components/providers";
-import { BASE_APP_ID } from "@/lib/env/public";
+import { BASE_APP_ID, SITE_URL } from "@/lib/env/public";
 import { config } from "@/lib/wagmi/config";
 import "./globals.css";
 
@@ -22,9 +22,7 @@ const ui = DM_Sans({
 export const metadata: Metadata = {
   title: "Neon Cookie Core",
   description: "Cyberpunk idle baker — swipe the core on Base.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  ),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     title: "Neon Cookie Core",
     description: "Cyberpunk idle baker — swipe the core on Base.",
